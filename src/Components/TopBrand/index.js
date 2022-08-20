@@ -2,7 +2,6 @@ import React from 'react'
 import NextArrow from '../NextArrow';
 import PrevArrow from '../PrevArrow';
 import Slider from "react-slick";
-import DeliverySingle from '../Delivery/DeliveryItem/DelliverySingle';
 
 const brandList = [
     {
@@ -67,7 +66,14 @@ function TopBrand() {
             <h2 className="text-[#1c1c1c] text-2xl font-semibold pb-8">Top brands for you</h2>
             <Slider {...settings}>
                 {brandList.map((item) => {
-                    return <DeliverySingle item={item} />
+                    return (
+                        <div className="">
+                            <div className="h-[150px] w-[150px]">
+                                <img className="shadow-xl rounded w-[100%] h-[100%] object-cover" src={item.cover} alt="Brand" />
+                            </div>
+                            <h2 className="text-base py-3 text-center font-semibold">{item.time}</h2>
+                        </div>
+                    )
                 })}
             </Slider>
         </div>

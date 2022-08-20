@@ -79,7 +79,7 @@ function DeliveryItem() {
                 <h2 className="text-[#1c1c1c] text-2xl font-semibold pb-8">Eat what makes you happy</h2>
                 <Slider {...settings}>
                     {deliverycommponents.map((item) => {
-                        return <DeliverySingle item={item}/>
+                        return <DeliverySingle item={item} key={item.id}/>
                     })}
                 </Slider>
             </div>
