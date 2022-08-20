@@ -7,24 +7,15 @@
     box-shadow: rgb(232, 232 , 232) 0px -0.5px 0px inset;
 }
 .tab-item{
-    margin-right: 24px;
-    padding: 12px 12px 20px 12px;
+    padding: 12px 0px 20px 0px;
 }
 .tab-name{
-    font-size: 20px;
     font-weight: 600;
-    margin-left: 10px;
     color: var(--inactive-text);
 }
 .tab-image-container{
-    height: 60px;
-    width: 60px;
     border-radius: 50%;
     background: var(--inactive-color);
-}
-.tab-img{
-    height: 30px;
-    width: 30px;
 }
 .active-tab{
     border-bottom: 2px solid #ff7e8b;

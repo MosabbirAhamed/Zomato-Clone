@@ -1,8 +1,28 @@
 import React from 'react'
-import NextArrow from '../../NextArrow/';
-import PrevArrow from '../../PrevArrow';
-import Slider from "react-slick";
 import DeliverySingle from './DelliverySingle';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2
+    }
+  };
+
 
 const deliverycommponents = [
     {
@@ -62,14 +82,6 @@ const deliverycommponents = [
     },
 ]
 
-var settings = {
-    dots: false,
-    infinite: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-};
 
 function DeliveryItem() {
 
@@ -77,11 +89,13 @@ function DeliveryItem() {
         <div className="bg-[#f8f8f8] py-4">
             <div className="container mx-auto">
                 <h2 className="text-[#1c1c1c] text-2xl font-semibold pb-8">Eat what makes you happy</h2>
-                <Slider {...settings}>
+                <Carousel 
+                 responsive={responsive}
+                >
                     {deliverycommponents.map((item) => {
                         return <DeliverySingle item={item} key={item.id}/>
                     })}
-                </Slider>
+                </Carousel>
             </div>
         </div>
     )

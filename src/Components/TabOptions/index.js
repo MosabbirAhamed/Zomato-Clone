@@ -28,17 +28,17 @@ function TabOptions({ activeTab, setActiveTab }) {
 
   return (
     <div className="tab-options">
-      <div className="container mx-auto flex">
+      <div className="container mx-auto flex gap-1">
         {tabs.map((tab) => {
           return (
             <div
               onClick={ ()=> setActiveTab(tab.name)}
-              className={`tab-item btn ${activeTab === tab.name && "active-tab"}`}
+              className={`tab-item mr-[0px] md:mr-[24px] btn ${activeTab === tab.name && "active-tab"}`}
             >
-              <div className="tab-image-container btn" style={{ backgroundColor: `${activeTab === tab.name ? tab.backdrop : ""}` }} >
-                <img className="tab-img" src={activeTab === tab.name ? tab.activeImg : tab.inactiveImg} alt={tab.name} />
+              <div className="tab-image-container h-[40px] w-[40px] md:h-[60px] md:w-[60px] btn" style={{ backgroundColor: `${activeTab === tab.name ? tab.backdrop : ""}` }} >
+                <img className="tab-img md:h-[30px] md:w-[30px] h-[20px] w-[20px] " src={activeTab === tab.name ? tab.activeImg : tab.inactiveImg} alt={tab.name} />
               </div>
-              <div className="tab-name">{tab.name}</div>
+              <div className="tab-name md:ml-[10px] ml-[6px] text-[16px] md:text-[20px]">{tab.name}</div>
             </div>
           )
         })}

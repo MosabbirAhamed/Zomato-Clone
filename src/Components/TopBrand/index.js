@@ -1,7 +1,5 @@
-import React from 'react'
-import NextArrow from '../NextArrow';
-import PrevArrow from '../PrevArrow';
-import Slider from "react-slick";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const brandList = [
     {
@@ -51,20 +49,34 @@ const brandList = [
     },
 ]
 
-var settings = {
-    dots: false,
-    infinite: false,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-};
+
+
+const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 6
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 6
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2
+    }
+  };
+
 
 function TopBrand() {
     return (
         <div className="container mx-auto my-3">
             <h2 className="text-[#1c1c1c] text-2xl font-semibold pb-8">Top brands for you</h2>
-            <Slider {...settings}>
+            <Carousel responsive={responsive}>
                 {brandList.map((item) => {
                     return (
                         <div className="">
@@ -75,7 +87,7 @@ function TopBrand() {
                         </div>
                     )
                 })}
-            </Slider>
+            </Carousel>
         </div>
     )
 }

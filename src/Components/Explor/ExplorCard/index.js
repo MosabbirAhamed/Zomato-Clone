@@ -16,7 +16,7 @@ function ExplorCard({restaurant}) {
 
     console.log(cuisines)
   return (
-    <div className="my-[15px] max-w-[350px] w-fit cursor-pointer p-[10px] rounded-xl hover:shadow-xl">
+    <div className="my-[15px] max-w-[362px] md:max-w-[350px] cursor-pointer p-[0px] md:p-[10px] rounded-xl hover:shadow-xl">
         <div className="h-[248px] w-[328px] relative ">
             <img className="h-[100%] w-[100%] object-cover rounded-xl " src={cover} alt={name} />
             <p className="absolute right-3 bottom-3 opacity-80 bg-slate-100 px-[3px] py-[1px] text-sm font-semibold rounded-sm">{deliveryTime}</p>
